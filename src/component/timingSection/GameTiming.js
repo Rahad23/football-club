@@ -15,14 +15,14 @@ const GameTiming = ({time}) => {
             {time: 7},
             {time: 10}
         ];
-   
+    const alart = ()=>{
         swal({
-            title: "Good job!",
-            text: "You clicked the button!",
+            title: "Meeting Done!",
+            text: "Invited to meet again later;",
             icon: "success",
-            button: "Aww yiss!",
+            button: "OK",
           });
-    
+    }
     return (
         <div className='bg-[#ddd] shadow-lg p-5'>
             <div className='sticky top-3'>
@@ -55,7 +55,7 @@ const GameTiming = ({time}) => {
                     <h1 className='text-center text-lg font-semibold mt-5'>Break time</h1>
                     <span className="px-6 py-5 text-center text-xl font-bold rounded-xl bg-slate-400 block mt-3 ">0<span>m</span></span>
                 </div>
-                <button onClick={swal} className="btn btn-success w-full mt-4 text-base font-bold text-white">Activity Completed</button>
+                <button onClick={alart} className="btn btn-success w-full mt-4 text-base font-bold text-white">Meeting Completed</button>
             </div>
         </div>
     );
