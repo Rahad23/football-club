@@ -13,7 +13,7 @@ const Card = (props) => {
                 <p className='text-base'>{cutString}</p>
                 <h4 className='text-lg font-semibold text-amber-800'>Meeting time: {time}m</h4>
                 <div className="card-actions">
-                <button className="btn btn-primary w-full mt-3">Add to list</button>
+                <button onClick={()=>props.getTime(time)} className="btn btn-primary w-full mt-3">Add to list</button>
                 </div>
             </div>
         </div>

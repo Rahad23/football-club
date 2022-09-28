@@ -1,12 +1,28 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
+import swal from 'sweetalert';
 import "./GameTiming.css";
-const GameTiming = () => {
+const GameTiming = ({time}) => {
+    const [mTime, setMtimes] = useState(0);
+        console.log(mTime);
+
+    useEffect(()=>{
+        setMtimes(time + mTime);
+    },[time])
+   
         const meetingTime = [
             {time: 2},
             {time: 5},
             {time: 7},
             {time: 10}
-        ]
+        ];
+   
+        swal({
+            title: "Good job!",
+            text: "You clicked the button!",
+            icon: "success",
+            button: "Aww yiss!",
+          });
+    
     return (
         <div className='bg-[#ddd] shadow-lg p-5'>
             <div className='sticky top-3'>
@@ -34,12 +50,12 @@ const GameTiming = () => {
                 </div>
                 <div className="border-dashed border-2 mt-10 rounded-md border-slate-900 p-3">
                     <h1 className='text-center text-lg font-semibold '>Meeting time</h1>
-                    <span className="px-6 py-5 text-center text-xl font-bold rounded-xl bg-slate-400 block mt-3 ">400m</span>
+                    <span className="px-6 py-5 text-center text-xl font-bold rounded-xl bg-slate-400 block mt-3 ">{mTime}<span>m</span></span>
 
                     <h1 className='text-center text-lg font-semibold mt-5'>Break time</h1>
-                    <span className="px-6 py-5 text-center text-xl font-bold rounded-xl bg-slate-400 block mt-3 ">30m</span>
+                    <span className="px-6 py-5 text-center text-xl font-bold rounded-xl bg-slate-400 block mt-3 ">0<span>m</span></span>
                 </div>
-                <button className="btn btn-success w-full mt-4 text-base font-bold text-white">Activity Completed</button>
+                <button onClick={swal} className="btn btn-success w-full mt-4 text-base font-bold text-white">Activity Completed</button>
             </div>
         </div>
     );

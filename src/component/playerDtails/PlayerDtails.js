@@ -2,8 +2,8 @@ import React, { useEffect, useState } from 'react';
 import Card from '../cardPlayer/Card';
 import CardHeader from '../headerCard/CardHeader';
 
-const PlayerDtails = () => {
-
+const PlayerDtails = ({getTime}) => {
+    
     const [club, setClubs] = useState([]);
     // console.log(club);
     useEffect(()=>{
@@ -21,7 +21,7 @@ const PlayerDtails = () => {
         </div>
         <div className='grid grid-cols-1 gap-7 md:grid-cols-2 lg:grid-cols-3 md:gap-10'>
         {
-            club.map(getClub=> <Card club ={getClub} key={getClub.id}></Card>)
+            club.map(getClub=> <Card club ={getClub} key={getClub.id} getTime={getTime}></Card>)
         }
         </div>
             </div>
