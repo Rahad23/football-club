@@ -5,7 +5,7 @@ import GameTiming from './component/timingSection/GameTiming';
 
 function App() {
   return (
-    <div className="grid App">
+    <div className="grid App mx-auto">
             <PlayerDtails></PlayerDtails>
         <GameTiming></GameTiming>
     </div>

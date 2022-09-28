@@ -1,15 +1,19 @@
 import React from 'react';
 
-const Card = () => {
+const Card = (props) => {
+    const {clubName, dtails, id, img, time} = props.club;
+    const cutString = dtails.slice(0, 100) + "...";
+
     return (
         <div>
-            <div className="card card-compact w-80 bg-base-100 shadow-xl">
-            <figure><img src="https://placeimg.com/400/225/arch" alt="Shoes" /></figure>
+            <div className="card card-compact w-80 bg-base-100 shadow-2xl p-4 mx-auto">
+            <figure><img src={img} alt="Shoes" className='w-44'/></figure>
             <div className="card-body">
-                <h2 className="card-title">Shoes!</h2>
-                <p>If a dog chews shoes whose shoes does he choose?</p>
-                <div className="card-actions justify-end">
-                <button className="btn btn-primary">Buy Now</button>
+                <h2 className="card-title">{clubName}</h2>
+                <p className='text-base'>{cutString}</p>
+                <h4 className='text-lg font-semibold text-amber-800'>Meeting time: {time}m</h4>
+                <div className="card-actions">
+                <button className="btn btn-primary w-full mt-3">Add to list</button>
                 </div>
             </div>
         </div>

@@ -1,17 +1,30 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import Card from '../cardPlayer/Card';
+import CardHeader from '../headerCard/CardHeader';
 
 const PlayerDtails = () => {
+
+    const [club, setClubs] = useState([]);
+    // console.log(club);
+    useEffect(()=>{
+        fetch('FoodballClubs.json')
+        .then(res=> res.json())
+        .then(data=> setClubs(data))
+    },[])
     return (
-        <div className='mt-28 p-6'>
-        <div className="navbar bg-base-100">
-            <a className="btn btn-ghost normal-case text-xl">FootBall-Club</a>
-        </div>
-        <div className='mr-6'>
+        <div className="mt-28">
+            <CardHeader></CardHeader>
+        <div className='p-6'>
+            <div className='mr-6'>
             <h1 className='text-3xl font-semibold text-slate-800
             ml-6 mb-5'>Select today’s exercise</h1>
         </div>
-         <Card></Card>
+        <div className='grid grid-cols-1 gap-7 md:grid-cols-2 lg:grid-cols-3 md:gap-10'>
+        {
+            club.map(getClub=> <Card club ={getClub} key={getClub.id}></Card>)
+        }
+        </div>
+            </div>
         </div>
     );
 };
