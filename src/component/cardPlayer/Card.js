@@ -6,7 +6,7 @@ const Card = (props) => {
 
     return (
         <div>
-            <div className="card card-compact w-80 bg-base-100 shadow-2xl p-4 mx-auto">
+            <div className="card card-compact w-80 bg-base-100 shadow-2xl p-4">
             <figure><img src={img} alt="Shoes" className='w-44'/></figure>
             <div className="card-body">
                 <h2 className="card-title">{clubName}</h2>
