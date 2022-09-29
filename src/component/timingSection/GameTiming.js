@@ -74,7 +74,7 @@ useEffect(()=>{
                 </h1>
 
                 <h1 className="mt-4 text-center font-bold text-xl text-slate-900">Meeting break time</h1>
-                <div className="mb-0">
+                <div className="mb-0 flex justify-center">
                     {
                        meetingTime.map(time=> <button onClick={()=>breakTime(time.time)} className="btn-sm rounded-full bg-[#218c74] font-bold text-xl ml-2 mt-3 text-[#fff]">{time.time}<span>m</span></button>)
                     }

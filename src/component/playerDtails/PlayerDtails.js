@@ -12,7 +12,7 @@ const PlayerDtails = ({getTime}) => {
         .then(data=> setClubs(data))
     },[])
     return (
-        <div className="mt-28">
+        <div className="mt-0 lg:mt-28">
             <CardHeader></CardHeader>
         <div className='p-6'>
             <div className='mr-6'>
