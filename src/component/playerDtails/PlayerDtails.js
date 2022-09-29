@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import Card from '../cardPlayer/Card';
 import CardHeader from '../headerCard/CardHeader';
-
+import Questions from '../question/Questions';
 const PlayerDtails = ({getTime}) => {
     
     const [club, setClubs] = useState([]);
@@ -24,6 +24,9 @@ const PlayerDtails = ({getTime}) => {
             club.map(getClub=> <Card club ={getClub} key={getClub.id} getTime={getTime}></Card>)
         }
         </div>
+            </div>
+            <div className="container mx-auto p-5">
+              <Questions></Questions>
             </div>
         </div>
     );
