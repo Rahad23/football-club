@@ -17,7 +17,7 @@ const PlayerDtails = ({getTime}) => {
         <div className='p-6'>
             <div className='mr-6'>
             <h1 className='text-3xl font-semibold text-slate-800
-            ml-6 mb-5'>Select the club you want ot meet with</h1>
+            ml-6 mb-5'>Will have a meeting</h1>
         </div>
         <div className='grid grid-cols-1 gap-7 md:grid-cols-2 lg:grid-cols-3 md:gap-10'>
         {

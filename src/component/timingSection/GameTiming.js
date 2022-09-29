@@ -70,12 +70,12 @@ useEffect(()=>{
                     Will attend the meeting: 
                     
                     <span className="text-red-900 border-double border-4 border-[#70a1ff] p-2 block mt-4 font-bold rounded-xl">
-                        <h1>Chelsea</h1>
-                        <h1>AFC Bournemouth</h1>
-                        <h1>Arsenal</h1>
-                        <h1>Aston Villa</h1>
-                        <h1>Brentford</h1>
-                        <h1>Liverpool</h1>
+                        <h1>Lionel-Messi</h1>
+                        <h1>Neymar jr</h1>
+                        <h1>Cristiano ronaldo</h1>
+                        <h1>Kylian Mbappé</h1>
+                        <h1>Mohamed-Salah</h1>
+                        <h1>Erling Haaland</h1>
                      </span> 
                 </h1>
 
