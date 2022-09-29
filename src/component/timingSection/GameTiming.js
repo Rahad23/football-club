@@ -58,8 +58,14 @@ useEffect(()=>{
     return (
         <div className='bg-[#ddd] shadow-lg p-5'>
             <div className='sticky top-3'>
+            <div className="flex justify-center">
+                    <img className="w-12 rounded-full" src="https://avatars.githubusercontent.com/u/94119962?v=4" alt="" />
+                    <div className="ml-4">
+                    <span className="text-lg font-bold text-purple-800">Developer</span>
+                    <h1 className="font-bold text-base text-[#03504c] hover:text-[#1a628b] cursor-pointer">Rahad Hasan</h1>
+                    </div>
+                </div>
                 <h1 className='text-xl font-bold text-black border-b-2 border-slate-900 text-center mt-5'>Meeting-Time</h1>
-
                 <h1 className="text-lg text-center font-semibold text-slate-900 mt-9">
                     Will attend the meeting: 
                     
