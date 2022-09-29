@@ -13,7 +13,7 @@ function App() {
   return (
     <div className="grid App mx-auto">
             <PlayerDtails getTime={getTime}></PlayerDtails>
-            <GameTiming time={time}></GameTiming>
+            <GameTiming time={time} key={time}></GameTiming>
     </div>
   );
 }

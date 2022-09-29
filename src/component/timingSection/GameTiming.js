@@ -5,7 +5,7 @@ const GameTiming = ({time}) => {
 
     const getLocalStorage = localStorage.getItem("Total-time") || '[]';
     let Parstimes = JSON.parse(getLocalStorage);
-    // const total = time + Parstimes;
+
     
     const [totalTime, setTotal] = useState(Parstimes);
 
@@ -19,8 +19,6 @@ useEffect(()=>{
         localStorage.setItem('Total-time', JSON.stringify(time));
     }
 
-
-   
         const meetingTime = [
             {time: 2},
             {time: 5},
@@ -28,13 +26,6 @@ useEffect(()=>{
             {time: 10}
         ];
 
-        // const localStorageGet = localStorage.getItem('Total-price');
-
-        // useEffect(()=>{
-            
-        //     console.log(localStorageGet);
-        //      setGetItem(localStorageGet);
-        // },[time]);
 
     const alert = ()=>{
         swal({
@@ -44,6 +35,26 @@ useEffect(()=>{
             button: "OK",
           });
     }
+
+    const localStorageGet = localStorage.getItem('brackTime');
+
+    const [brack, setBrack]= useState(localStorageGet);
+    const breakTime = (brackTime)=>{
+        setBrack(brackTime);
+        if(localStorageGet){
+            localStorage.setItem("brackTime",brackTime);
+        }else{
+            localStorage.setItem("brackTime", 0);
+        }
+    };
+
+
+    localStorage.setItem("brackTime",brack);
+
+  
+   
+
+    
     return (
         <div className='bg-[#ddd] shadow-lg p-5'>
             <div className='sticky top-3'>
@@ -65,7 +76,7 @@ useEffect(()=>{
                 <h1 className="mt-4 text-center font-bold text-xl text-slate-900">Meeting break time</h1>
                 <div className="mb-0">
                     {
-                       meetingTime.map(time=> <button className="btn-sm rounded-full bg-[#218c74] font-bold text-xl ml-2 mt-3 text-[#fff]">{time.time}<span>m</span></button>)
+                       meetingTime.map(time=> <button onClick={()=>breakTime(time.time)} className="btn-sm rounded-full bg-[#218c74] font-bold text-xl ml-2 mt-3 text-[#fff]">{time.time}<span>m</span></button>)
                     }
                 
                 </div>
@@ -74,7 +85,7 @@ useEffect(()=>{
                     <span className="px-6 py-5 text-center text-xl font-bold rounded-xl bg-slate-400 block mt-3 ">{totalTime}<span>m</span></span>
 
                     <h1 className='text-center text-lg font-semibold mt-5'>Break time</h1>
-                    <span className="px-6 py-5 text-center text-xl font-bold rounded-xl bg-slate-400 block mt-3 ">0<span>m</span></span>
+                    <span className="px-6 py-5 text-center text-xl font-bold rounded-xl bg-slate-400 block mt-3 ">{brack}<span>m</span></span>
                 </div>
                 <button onClick={alert} className="btn btn-success w-full mt-4 text-base font-bold text-white">Meeting Completed</button>
             </div>
